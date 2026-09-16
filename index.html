@@ -198,6 +198,12 @@
     display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .15s;
   }
   .tile-zoom svg{ width:13px; height:13px; }
+  .tile-video{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0; transition:opacity .25s ease; pointer-events:none;
+  }
+  .tile:hover .tile-video{ opacity:1; }
+  @media (hover:none){ .tile-video{ display:none; } }
 
   /* ---------- EDITORIAL ---------- */
   .ed-grid{ display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); }
@@ -270,16 +276,19 @@
       <div class="tiles">
         <a class="tile" href="https://www.instagram.com/reel/DRC_qwCkofR/" target="_blank" rel="noopener">
           <img src="/images/pt.jpg" alt="Holiday Gifting with Payton Talbot">
+          <video class="tile-video" src="/videos/pt.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Holiday Gifting with Payton Talbot</span>
         </a>
         <a class="tile" href="https://www.instagram.com/reel/DRVANOFkiPT/" target="_blank" rel="noopener">
           <img src="/images/pk.jpg" alt="Pokimane Horoscope Haul & Giveaway">
+          <video class="tile-video" src="/videos/pk.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Pokimane Horoscope Haul &amp; Giveaway</span>
         </a>
         <a class="tile" href="https://www.tiktok.com/@goat/video/7576033716686851359?lang=en" target="_blank" rel="noopener">
           <img src="/images/th.png" alt="Tyrell Hampton for DOAF">
+          <video class="tile-video" src="/videos/th.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Tyrell Hampton for DOAF</span>
         </a>
@@ -296,16 +305,19 @@
       <div class="tiles">
         <a class="tile" href="https://www.youtube.com/shorts/GRzg5bRSwS0" target="_blank" rel="noopener">
           <img src="/images/sc.jpg" alt="Sydel Curry-Lee">
+          <video class="tile-video" src="/videos/sc.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Sydel Curry-Lee</span>
         </a>
         <a class="tile" href="https://www.youtube.com/shorts/f2EISik8heM" target="_blank" rel="noopener">
           <img src="/images/jr.jpg" alt="Jen The Realfluencer">
+          <video class="tile-video" src="/videos/jr.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Jen The Realfluencer</span>
         </a>
         <a class="tile" href="https://www.youtube.com/shorts/HBYWDKrReJE" target="_blank" rel="noopener">
           <img src="/images/kw.jpg" alt="Kimberly Whisk">
+          <video class="tile-video" src="/videos/kw.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">Kimberly Whisk</span>
         </a>
@@ -322,6 +334,7 @@
       <div class="tiles">
         <a class="tile" href="https://www.instagram.com/reel/DPjIxWHDE6p/?hl=en" target="_blank" rel="noopener">
           <img src="/images/ns.jpg" alt="The Nike Shox Revival">
+          <video class="tile-video" src="/videos/ns.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">The Nike Shox Revival</span>
         </a>
@@ -332,6 +345,7 @@
         </a>
         <a class="tile" href="https://www.instagram.com/reels/DM0d4DUMK7X/" target="_blank" rel="noopener">
           <img src="/images/ua.jpg" alt="The Undefeated x AJ4 Returns">
+          <video class="tile-video" src="/videos/ua.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           <span class="tile-cap">The Undefeated x AJ4 Returns</span>
         </a>
@@ -360,6 +374,7 @@
         </a>
         <a class="tile" href="https://www.instagram.com/p/DbCWbZWK-mK/" target="_blank" rel="noopener">
           <img src="/images/ts.jpg" alt="Sneaker gifting table">
+          <video class="tile-video" src="/videos/ts.mp4" muted loop playsinline preload="none"></video>
           <span class="tile-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -645,6 +660,20 @@
     const prev = copyLabel.textContent;
     copyLabel.textContent = 'Copied';
     setTimeout(()=>{ copyLabel.textContent = prev; }, 1800);
+  });
+
+  // ---- Hover-to-play silent preview videos (desktop only, see @media(hover:none)) ----
+  document.querySelectorAll('.tile-video').forEach((video) => {
+    const tile = video.closest('.tile');
+    if (!tile) return;
+    tile.addEventListener('mouseenter', () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+    tile.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
   });
 </script>
 </body>
